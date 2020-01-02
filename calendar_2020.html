@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2020 Calendar</title>
+<style>
+body { font-family: sans-serif; }
+table { border-collapse: collapse; }
+th { background: #fafafa; }
+td, th {
+	font-size: 12px;
+	padding: 4px 10px;
+	text-align: right;
+}
+th:nth-child(2) { text-align: left; }
+td:nth-child(2):not(:empty) {
+	text-align: left;
+	background: #CDE7F0;
+	border-top: solid 2px #CDE7F0;
+}
+td:first-child, th:first-child { color: #aaa; }
+td:nth-child(8), th:nth-child(8),
+td:nth-child(9), th:nth-child(9) { color: #999; }
+.first {
+	border-left: solid 2px #CDE7F0;
+	background: linear-gradient(to bottom right, #CDE7F0 25%, #ffff 60%);
+}
+.mend { border-bottom: solid 2px #CDE7F0; }
+.mstart { border-top: solid 2px #CDE7F0; }
+#cal { display: inline-block; }
+h1 {
+	text-align: right;
+	margin: 5px 0;
+}
+h1::before {
+	content: 'Calendar ';
+	font-size: smaller;
+	font-weight: lighter;
+}
+@page { margin: 0.5cm; }
+</style>
+</head>
+<body>
+
+<div id=cal>
+<h1>2020</h1>
+<table>
+<thead><tr><th>#</th><th>Month</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th><th>Su</th></tr></thead>
+<tr><td>1</td>
+<td></td>
+<td class="mend">31</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+<td class="mstart">5</td>
+<td class="mstart">6</td>
+</tr>
+<tr><td>2</td>
+<td>January</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr><td>3</td>
+<td></td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+</tr>
+<tr><td>4</td>
+<td></td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+</tr>
+<tr><td>5</td>
+<td></td>
+<td class="mend">28</td>
+<td class="mend">29</td>
+<td class="mend">30</td>
+<td class="mend">31</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+</tr>
+<tr><td>6</td>
+<td>February</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr><td>7</td>
+<td></td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+</tr>
+<tr><td>8</td>
+<td></td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+</tr>
+<tr><td>9</td>
+<td></td>
+<td class="mend">25</td>
+<td class="mend">26</td>
+<td class="mend">27</td>
+<td class="mend">28</td>
+<td class="mend">29</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+</tr>
+<tr><td>10</td>
+<td>March</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr><td>11</td>
+<td></td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+</tr>
+<tr><td>12</td>
+<td></td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+</tr>
+<tr><td>13</td>
+<td></td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+</tr>
+<tr><td>14</td>
+<td></td>
+<td class="mend">31</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+<td class="mstart">5</td>
+<td class="mstart">6</td>
+</tr>
+<tr><td>15</td>
+<td>April</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr><td>16</td>
+<td></td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+</tr>
+<tr><td>17</td>
+<td></td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+</tr>
+<tr><td>18</td>
+<td></td>
+<td class="mend">28</td>
+<td class="mend">29</td>
+<td class="mend">30</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+</tr>
+<tr><td>19</td>
+<td>May</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+<tr><td>20</td>
+<td></td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+</tr>
+<tr><td>21</td>
+<td></td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+</tr>
+<tr><td>22</td>
+<td></td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td>31</td>
+<td class="first">1</td>
+</tr>
+<tr><td>23</td>
+<td>June</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+<td class="mstart">5</td>
+<td class="mstart">6</td>
+<td class="mstart">7</td>
+<td>8</td>
+</tr>
+<tr><td>24</td>
+<td></td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr><td>25</td>
+<td></td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+</tr>
+<tr><td>26</td>
+<td></td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+</tr>
+<tr><td>27</td>
+<td></td>
+<td class="mend">30</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+<td class="mstart">5</td>
+<td class="mstart">6</td>
+</tr>
+<tr><td>28</td>
+<td>July</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr><td>29</td>
+<td></td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+</tr>
+<tr><td>30</td>
+<td></td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+</tr>
+<tr><td>31</td>
+<td></td>
+<td class="mend">28</td>
+<td class="mend">29</td>
+<td class="mend">30</td>
+<td class="mend">31</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+</tr>
+<tr><td>32</td>
+<td>August</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr><td>33</td>
+<td></td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+</tr>
+<tr><td>34</td>
+<td></td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+</tr>
+<tr><td>35</td>
+<td></td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+<td>31</td>
+</tr>
+<tr><td>36</td>
+<td></td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+<td class="mstart">5</td>
+<td class="mstart">6</td>
+<td class="mstart">7</td>
+</tr>
+<tr><td>37</td>
+<td>September</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+</tr>
+<tr><td>38</td>
+<td></td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+</tr>
+<tr><td>39</td>
+<td></td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+</tr>
+<tr><td>40</td>
+<td></td>
+<td class="mend">29</td>
+<td class="mend">30</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+<td class="mstart">5</td>
+</tr>
+<tr><td>41</td>
+<td>October</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr><td>42</td>
+<td></td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+</tr>
+<tr><td>43</td>
+<td></td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+</tr>
+<tr><td>44</td>
+<td></td>
+<td class="mend">27</td>
+<td class="mend">28</td>
+<td class="mend">29</td>
+<td class="mend">30</td>
+<td class="mend">31</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+</tr>
+<tr><td>45</td>
+<td>November</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr><td>46</td>
+<td></td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+</tr>
+<tr><td>47</td>
+<td></td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+</tr>
+<tr><td>48</td>
+<td></td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+<td>30</td>
+</tr>
+<tr><td>49</td>
+<td></td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+<td class="mstart">5</td>
+<td class="mstart">6</td>
+<td class="mstart">7</td>
+</tr>
+<tr><td>50</td>
+<td>December</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+</tr>
+<tr><td>51</td>
+<td></td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+</tr>
+<tr><td>52</td>
+<td></td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+</tr>
+<tr><td>53</td>
+<td></td>
+<td class="mend">29</td>
+<td class="mend">30</td>
+<td class="mend">31</td>
+<td class="first mstart">1</td>
+<td class="mstart">2</td>
+<td class="mstart">3</td>
+<td class="mstart">4</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
