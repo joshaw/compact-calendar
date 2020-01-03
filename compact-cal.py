@@ -5,7 +5,8 @@ import datetime as dt
 START_DAY = 0
 YEAR = 2020
 
-we_col = 6 - START_DAY + 2
+sun_col = (6 - START_DAY) % 7 + 1 + 2
+sat_col = (6 - START_DAY - 1) % 7 + 1 + 2
 
 print(
     """<!DOCTYPE html>
@@ -28,8 +29,8 @@ td:nth-child(2):not(:empty) {
 	border-top: solid 2px COLOR;
 }
 td:first-child, th:first-child { color: #aaa; }
-td:nth-child(WEEKEND_COL_1), th:nth-child(WEEKEND_COL_1),
-td:nth-child(WEEKEND_COL_2), th:nth-child(WEEKEND_COL_2) { color: #999; }
+td:nth-child(WEEKEND_1), th:nth-child(WEEKEND_1),
+td:nth-child(WEEKEND_2), th:nth-child(WEEKEND_2) { color: #999; }
 .first {
 	border-left: solid 2px COLOR;
 	background: linear-gradient(to bottom right, COLOR 25%, #ffff 60%);
@@ -54,8 +55,8 @@ h1::before {
         "YEAR", str(YEAR)
     )
     .replace("COLOR", "#CDE7F0")
-    .replace("WEEKEND_COL_1", str(we_col))
-    .replace("WEEKEND_COL_2", str(we_col + 1))
+    .replace("WEEKEND_1", str(sat_col))
+    .replace("WEEKEND_2", str(sun_col))
 )
 
 
@@ -82,24 +83,18 @@ print(f"<h1>{YEAR}</h1>")
 print("<table>")
 print("<thead><tr><th>" + weekdays + "</th></tr></thead>")
 
-while start_date < end_date:
+while start_date <= end_date:
     print(f"<tr><td>{start_date.isocalendar()[1]}</td>")
 
-    day = start_date
-    has_first = day.day == 1
-    for _ in range(0, 6):
-        day += dt.timedelta(days=1)
-        has_first |= day.day == 1
+    week_end = start_date + dt.timedelta(days=6)
+    has_first = week_end.day <= 7
 
-    full_week = start_date.month == day.month and day.day < 14
-
-    if full_week:
-        print(f"<td>{day.strftime('%B')}</td>")
+    if (start_date.month == week_end.month) and (week_end.day < 14):
+        print(f"<td>{start_date.strftime('%B')}</td>")
     else:
         print("<td></td>")
 
     for _ in range(0, 7):
-        start_date += dt.timedelta(days=1)
         d = start_date.day
 
         classes = []
@@ -113,6 +108,8 @@ while start_date < end_date:
 
         classes = (' class="' + " ".join(classes) + '"') if len(classes) > 0 else ""
         print(f"<td{classes}>{d}</td>")
+
+        start_date += dt.timedelta(days=1)
 
     print("</tr>")
 
