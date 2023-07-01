@@ -5,6 +5,7 @@ import sys
 
 START_DAY = 0
 YEAR = int(sys.argv[1]) if len(sys.argv) > 1 else dt.datetime.now().year
+ONEDAY = dt.timedelta(days=1)
 
 sun_col = (6 - START_DAY) % 7 + 1 + 2
 sat_col = (6 - START_DAY - 1) % 7 + 1 + 2
@@ -63,9 +64,9 @@ h1::before {
 
 def transform_start(start_date):
     while start_date.weekday() != (START_DAY % 7):
-        start_date -= dt.timedelta(days=1)
+        start_date -= ONEDAY
 
-    return start_date  # - dt.timedelta(days=7)
+    return start_date  # - ONEDAY * 7
 
 
 def rotate(l, n):
@@ -87,7 +88,7 @@ print("<thead><tr><th>" + weekdays + "</th></tr></thead>")
 while start_date <= end_date:
     print(f"<tr><td>{start_date.isocalendar()[1]}</td>")
 
-    week_end = start_date + dt.timedelta(days=6)
+    week_end = start_date + ONEDAY * 6
     has_first = week_end.day <= 7
 
     if (start_date.month == week_end.month) and (week_end.day < 14):
@@ -110,7 +111,7 @@ while start_date <= end_date:
         classes = (' class="' + " ".join(classes) + '"') if len(classes) > 0 else ""
         print(f"<td{classes}>{d}</td>")
 
-        start_date += dt.timedelta(days=1)
+        start_date += ONEDAY
 
     print("</tr>")
 
