@@ -74,7 +74,7 @@ def rotate(l, n):
 
 
 start_date = transform_start(dt.date(YEAR, 1, 1))
-end_date = dt.date(YEAR + 1, 1, 1)
+end_date = dt.date(YEAR, 12, 31)
 
 weekdays = "</th><th>".join(
     ["#", "Month"] + rotate(["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"], START_DAY)
