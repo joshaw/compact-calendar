@@ -1,9 +1,10 @@
 #!/bin/python3
 
 import datetime as dt
+import sys
 
 START_DAY = 0
-YEAR = 2020
+YEAR = int(sys.argv[1]) if len(sys.argv) > 1 else dt.datetime.now().year
 
 sun_col = (6 - START_DAY) % 7 + 1 + 2
 sat_col = (6 - START_DAY - 1) % 7 + 1 + 2
